@@ -14,7 +14,7 @@
 
     <title>Frontend Mentor | Interactive rating component</title>
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,27 +23,57 @@
     />
   </head>
   <body>
-    <!-- Rating state start -->
+    <main class="rating-container">
+      
+      <!-- Rating state -->
+      <div class="rating-state" id="rating-state">
+        <div class="circle">
+          <img src="./images/icon-star.svg" alt="star" />
+        </div>
+        <h1 class="question">How did we do?</h1>
+        <p class="rating-state-paragraph">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <ul class="rating-levels">
+          <li class="rating-level">1</li>
+          <li class="rating-level">2</li>
+          <li class="rating-level">3</li>
+          <li class="rating-level">4</li>
+          <li class="rating-level">5</li>
+        </ul>
+        <button type="submit" id="primary-btn">Submit</button>
+      </div>
 
-    How did we do? Please let us know how we did with your support request. All
-    feedback is appreciated to help us improve our offering! 1 2 3 4 5 Submit
+      <!-- Thank you state -->
+      <div class="thank-you-state inactive" id="thank-you-state">
+        <img
+          class="thank-you-image"
+          src="./images/illustration-thank-you.svg"
+          alt="illustration thank you"
+        />
+        <div class="rating-submitted">
+          You selected <span id="selected-number"></span> out of 5
+        </div>
+        <h2 class="thank-you-message">Thank you!</h2>
+        <p class="thank-you-paragraph">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+      </div>
+    </main>
 
-    <!-- Rating state end -->
-
-    <!-- Thank you state start -->
-
-    You selected
-    <!-- Add rating here -->
-    out of 5 Thank you! We appreciate you taking the time to give a rating. If
-    you ever need more support, don’t hesitate to get in touch!
-
-    <!-- Thank you state end -->
-
+    <!-- Attribution -->
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="https://www.frontendmentor.io/profile/IvanEDLCP">Ivan E. De la Cruz</a>.
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/IvanEDLCP"
+        >Ivan E. De la Cruz</a
+      >.
     </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>

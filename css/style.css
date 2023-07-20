@@ -6,6 +6,31 @@
 }
 
 
+.inactive {
+  display: none;
+}
+
+.rating-levels {
+  display: flex;
+  gap: 20px;
+}
+
+.rating-level {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: gray;
+  color: white;
+}
+
+.rating-level:hover {
+  background-color: green;
+}
+
+.rating-active {
+  background-color: orange;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
