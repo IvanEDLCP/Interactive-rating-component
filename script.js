@@ -1,33 +1,74 @@
-let ratingState = document.querySelector('#rating-state');
-let thankYouState = document.querySelector('#thank-you-state');
-let ratingLevels = document.querySelectorAll('.rating-level');
+const ratingState = document.querySelector('#rating-state');
+const ratingLevels = document.querySelectorAll('.rating-level');
+const thankYouState = document.querySelector('#thank-you-state');
+const primaryBtn = document.querySelector('#primary-btn');
+const selectedNumber = document.querySelector('#selected-number');
 
 let number;
 
+
+// RATING STATE
+
+// Assigning an event listener to each rating level
 for (let i = 0; i < ratingLevels.length; i++) {
     ratingLevels[i].addEventListener('click', () => {
         verificateStatus(ratingLevels[i]);
     });
 }
 
+// Function that verifies the status of a rating level.
 function verificateStatus(ratingLevel) {
     let status = ratingLevel.classList.contains('rating-active');
 
     if (!status) {
-        activateRatingBtn(ratingLevel);
+        cleanRatingLevels();
+        activateRatingLevel(ratingLevel);
     } else {
-        deactiveRatingBtn();
+        deactiveRatingLevel(ratingLevel);
     }
 }
 
-function activateRatingBtn(ratingLevel) {
+// Function that deactivates all active levels
+function cleanRatingLevels() {
+    ratingLevels.forEach(ratingLevel => {
+        if (ratingLevel.classList.contains('rating-active')) {
+            deactiveRatingLevel(ratingLevel);
+        }
+    });
+}
+
+// Function that activates a rating level
+function activateRatingLevel(ratingLevel) {
     ratingLevel.classList.add('rating-active');
     number = ratingLevel.textContent;
     console.log(number);
 }
 
-function deactiveRatingBtn() {
-    ratingLevels.forEach(ratingLevel => {
-        ratingLevel.classList.remove('rating-active');
-    });
+// Function that disables a rating level
+function deactiveRatingLevel(ratingLevel) {
+    ratingLevel.classList.remove('rating-active');
+    number = null;
+    console.log(number);
+}
+
+
+// THANK YOU STATE
+
+// Assign event listener to sumbit button
+primaryBtn.addEventListener('click', verificateRating);
+
+// Function that validates that a number has been selected.
+function verificateRating() {
+    if (number >0) {
+        console.log('Number sent');
+        showThankYouState();
+    } else {
+        console.log('Number null');
+    }
+}
+
+// Function that displays the thank you state
+function showThankYouState() {
+    ratingState.classList.add('inactive');
+    thankYouState.classList.remove('inactive');
 }
