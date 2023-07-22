@@ -71,4 +71,5 @@ function verificateRating() {
 function showThankYouState() {
     ratingState.classList.add('inactive');
     thankYouState.classList.remove('inactive');
+    selectedNumber.innerText = number;
 }
