@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -24,7 +23,6 @@
   </head>
   <body>
     <main class="rating-container">
-      
       <!-- Rating state -->
       <div class="rating-state" id="rating-state">
         <div class="circle">
@@ -36,13 +34,15 @@
           is appreciated to help us improve our offering!
         </p>
         <ul class="rating-levels">
-          <li class="rating-level">1</li>
-          <li class="rating-level">2</li>
-          <li class="rating-level">3</li>
-          <li class="rating-level">4</li>
-          <li class="rating-level">5</li>
+          <li class="rating-level circle">1</li>
+          <li class="rating-level circle">2</li>
+          <li class="rating-level circle">3</li>
+          <li class="rating-level circle">4</li>
+          <li class="rating-level circle">5</li>
         </ul>
-        <button type="submit" id="primary-btn">Submit</button>
+        <button type="submit" id="primary-btn" class="primary-btn">
+          Submit
+        </button>
       </div>
 
       <!-- Thank you state -->
@@ -52,9 +52,9 @@
           src="./images/illustration-thank-you.svg"
           alt="illustration thank you"
         />
-        <div class="rating-submitted">
+        <span class="rating-submitted">
           You selected <span id="selected-number"></span> out of 5
-        </div>
+        </span>
         <h2 class="thank-you-message">Thank you!</h2>
         <p class="thank-you-paragraph">
           We appreciate you taking the time to give a rating. If you ever need

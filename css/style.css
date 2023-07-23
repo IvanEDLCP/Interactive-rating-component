@@ -1,40 +1,170 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Overpass', sans-serif;
+:root {
+  /* Primary colors */
+  --orange: hsl(25, 97%, 53%);
+
+  /* Neutral colors */
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue-circle: hsl(213, 15%, 25%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+
+  /* Font size */
+  --paragraph: 15px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--very-dark-blue);
+}
+
+/* Main container */
+
+.rating-container {
+  width: 340px;
+  height: 345px;
+  padding: 20px;
+  background: var(--dark-blue);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Rating State */
+
+.rating-state {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--dark-blue-circle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.question {
+  margin: 20px 0;
+  font-size: 26px;
+  color: white;
+}
+
+.rating-state-paragraph {
+  font-size: var(--paragraph);
+  color: var(--light-grey);
+}
+
+.rating-levels {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.rating-level {
+  list-style: none;
+  color: var(--light-grey);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.rating-level:hover {
+  color: var(--white);
+  background: var(--orange);
+}
+
+.rating-active {
+  color: var(--white);
+  background: var(--medium-grey);
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 10px;
+  border-style: none;
+  border-radius: 20px;
+  background: var(--orange);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  color: var(--orange);
+  background: var(--white);
+}
+
+/* Thank You State */
+
+.thank-you-state {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating-submitted {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: var(--paragraph);
+  color: var(--orange);
+  background: var(--dark-blue-circle);
+  margin: 25px 0;
+}
+
+.thank-you-message {
+  color: var(--white);
+  margin: 5px 0 15px 0;
+}
+
+.thank-you-paragraph {
+  font-size: var(--paragraph);
+  color: var(--light-grey);
+  text-align: center;
+}
 
 .inactive {
   display: none;
 }
 
-.rating-levels {
-  display: flex;
-  gap: 20px;
-}
-
-.rating-level {
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: gray;
-  color: white;
-}
-
-.rating-level:hover {
-  background-color: green;
-}
-
-.rating-active {
-  background-color: orange;
-}
+/* Attribution */
 
 .attribution {
-    font-size: 11px;
-    text-align: center;
-  }
-  .attribution a {
-    color: hsl(228, 45%, 44%);
-  }
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+  color: var(--dark-blue);
+}
+.attribution a {
+  text-decoration: none;
+  color: var(--light-grey);
+  transition: 0.3s;
+}
+
+.attribution a:hover {
+  color: var(--orange);
+}

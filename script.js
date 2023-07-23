@@ -41,14 +41,12 @@ function cleanRatingLevels() {
 function activateRatingLevel(ratingLevel) {
     ratingLevel.classList.add('rating-active');
     number = ratingLevel.textContent;
-    console.log(number);
 }
 
 // Function that disables a rating level
 function deactiveRatingLevel(ratingLevel) {
     ratingLevel.classList.remove('rating-active');
     number = null;
-    console.log(number);
 }
 
 
@@ -59,11 +57,9 @@ primaryBtn.addEventListener('click', verificateRating);
 
 // Function that validates that a number has been selected.
 function verificateRating() {
-    if (number >0) {
-        console.log('Number sent');
+    if (number > 0) {
         showThankYouState();
     } else {
-        console.log('Number null');
     }
 }
 
