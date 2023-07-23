@@ -30,11 +30,13 @@ body {
   background: var(--very-dark-blue);
 }
 
+/* Mobile Version */
+
 /* Main container */
 
 .rating-container {
   width: 340px;
-  height: 345px;
+  min-height: 345px;
   padding: 20px;
   background: var(--dark-blue);
   border-radius: 20px;
@@ -51,8 +53,8 @@ body {
 }
 
 .circle {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background: var(--dark-blue-circle);
   display: flex;
@@ -74,7 +76,6 @@ body {
 .rating-levels {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
   margin: 24px 0;
 }
 
@@ -148,6 +149,25 @@ body {
 
 .inactive {
   display: none;
+}
+
+/* Desktop Version */
+
+@media (min-width: 1024px) {
+  /* Rating State */
+  .rating-container {
+    width: 380px;
+    height: 360px;
+  }
+
+  .question {
+    margin-bottom: 10px;
+  }
+
+  .rating-state-paragraph {
+    line-height: 22px;
+    margin-right: 5px;
+  }
 }
 
 /* Attribution */
